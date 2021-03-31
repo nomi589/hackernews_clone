@@ -6,7 +6,7 @@ export default function Nav() {
     <nav class="navbar">
       <ul>
         <li>
-          <NavLink to="/" activeClassName="navlink-active">
+          <NavLink to="/" exact activeClassName="navlink-active">
             Top
           </NavLink>
         </li>
