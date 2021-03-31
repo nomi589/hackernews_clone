@@ -4,6 +4,8 @@ html[data-theme="light"] {
   --link-color: #bb2e1f;
   --inactive-navbar-link: black;
   --active-navbar-link: var(--link-color);
+  --theme-toggler-bg-color: var(--background-color);
+  --theme-toggler-text-color: var(--link-color);
 }
 
 html[data-theme="dark"] {
@@ -12,6 +14,8 @@ html[data-theme="dark"] {
   --link-color: #bb2e1f;
   --inactive-navbar-link: #cbcbcb;
   --active-navbar-link: var(--link-color);
+  --theme-toggler-bg-color: var(--background-color);
+  --theme-toggler-text-color: yellow;
 }
 
 body {
@@ -28,6 +32,17 @@ body {
 header {
   display: flex;
   justify-content: space-between;
+}
+
+header button {
+  background-color: var(--theme-toggler-bg-color);
+  color: var(--theme-toggler-text-color);
+  border: none;
+  font-size: 2rem;
+}
+
+header button:hover {
+  cursor: pointer;
 }
 
 nav ul {
