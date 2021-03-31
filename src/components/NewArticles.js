@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class NewArticles {
+export default class NewArticles extends React.Component {
   render() {
     return "NewArticles";
   }
