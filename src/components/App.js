@@ -19,7 +19,9 @@ export default class App extends React.Component {
   }
 
   toggleTheme = () => {
-    console.log("toggle");
+    this.setState((oldState) => ({
+      theme: oldState.theme === "light" ? "dark" : "light",
+    }));
   };
 
   render() {
