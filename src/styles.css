@@ -1,3 +1,34 @@
+html {
+  --default-link-color: black;
+  --active-link-color: #bb2e1f;
+}
+
 body {
   font-family: sans-serif;
+}
+
+#app {
+  max-width: 720px;
+  margin: 80px auto;
+}
+
+nav ul {
+  display: flex;
+  margin: 0 0 20px 0;
+  padding: 0;
+  gap: 20px;
+}
+
+nav li {
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--default-link-color);
+  font-weight: bold;
+}
+
+nav a.navlink-active {
+  color: var(--active-link-color);
 }
