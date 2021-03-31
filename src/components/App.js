@@ -5,6 +5,18 @@ import TopArticles from "./TopArticles";
 import NewArticles from "./NewArticles";
 
 export default class App extends React.Component {
+  state = {
+    theme: "light",
+  };
+
+  componentDidMount() {
+    document.documentElement.setAttribute("data-theme", this.state.theme);
+  }
+
+  componentDidUpdate() {
+    document.documentElement.setAttribute("data-theme", this.state.theme);
+  }
+
   render() {
     return (
       <Router>
