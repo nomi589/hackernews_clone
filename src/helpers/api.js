@@ -10,7 +10,7 @@ export default function getHeadlines(type = "top", articleCount = 10) {
           url: article.url,
           author: article.by,
           time: article.time,
-          comments: article.kids,
+          numberOfComments: article.kids ? article.kids.length : 0,
           id: article.id,
         };
       });
