@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function ArticleHeadline(props) {
   const { title, url, author, time, numberOfComments, id } = props.article;
@@ -20,3 +21,7 @@ export default function ArticleHeadline(props) {
     </article>
   );
 }
+
+ArticleHeadline.propTypes = {
+  article: PropTypes.object.isRequired,
+};

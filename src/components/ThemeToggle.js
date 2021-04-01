@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { FaSun, FaMoon } from "react-icons/fa";
 
 export default function ThemeToggle(props) {
@@ -8,3 +9,7 @@ export default function ThemeToggle(props) {
     </button>
   );
 }
+
+ThemeToggle.propTypes = {
+  theme: PropTypes.string.isRequired,
+};
