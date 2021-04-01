@@ -74,7 +74,16 @@ article p {
   margin: 0;
 }
 
-article a {
+article .title a {
   color: var(--link-color);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+}
+
+article .metadata {
+  font-size: 0.9rem;
+}
+
+article .metadata a {
+  color: var(--text-color);
+  text-decoration: underline;
 }

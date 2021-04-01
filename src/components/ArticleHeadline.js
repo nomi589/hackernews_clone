@@ -13,10 +13,10 @@ export default function ArticleHeadline(props) {
 
   return (
     <article>
-      <p>
+      <p class="title">
         <a href={url}>{title}</a>
       </p>
-      <p>
+      <p class="metadata">
         by{" "}
         <Link
           to={{
