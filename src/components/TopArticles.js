@@ -1,6 +1,6 @@
 import React from "react";
 import ArticleHeadline from "./ArticleHeadline";
-import getHeadlines from "../helpers/api";
+import { getHeadlines } from "../helpers/api";
 
 export default class TopArticles extends React.Component {
   state = {

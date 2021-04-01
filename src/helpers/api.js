@@ -1,4 +1,4 @@
-export default function getHeadlines(type = "top", itemCount = 10) {
+export function getHeadlines(type = "top", itemCount = 10) {
   const endpoint = `https://hacker-news.firebaseio.com/v0/${type}stories.json`;
 
   return getIds(endpoint, itemCount)
@@ -33,7 +33,7 @@ function getIds(endpoint, itemCount) {
     });
 }
 
-function getItems(ids) {
+export function getItems(ids) {
   const itemByIdEndpoints = ids.map(
     (articleId) =>
       `https://hacker-news.firebaseio.com/v0/item/${articleId}.json`
@@ -50,4 +50,10 @@ function getItems(ids) {
 
     return fulfilledResults.map((result) => result.value);
   });
+}
+
+export function getUser(id) {
+  const endpoint = `https://hacker-news.firebaseio.com/v0/user/${id}.json`;
+
+  return fetch(endpoint).then((res) => res.json());
 }
