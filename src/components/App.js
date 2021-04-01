@@ -1,9 +1,27 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Nav from "./Nav";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import TopArticles from "./TopArticles";
 import NewArticles from "./NewArticles";
 import ThemeToggle from "./ThemeToggle";
+
+function Nav() {
+  return (
+    <nav>
+      <ul>
+        <li>
+          <NavLink to="/" exact activeClassName="navlink-active">
+            Top
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/new" activeClassName="navlink-active">
+            New
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
+  );
+}
 
 export default class App extends React.Component {
   state = {
