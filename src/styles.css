@@ -65,3 +65,16 @@ nav a {
 nav a.navlink-active {
   color: var(--active-navbar-link);
 }
+
+article {
+  margin-bottom: 30px;
+}
+
+article p {
+  margin: 0;
+}
+
+article a {
+  color: var(--link-color);
+  font-size: 1.1rem;
+}
