@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 export default function ArticleHeadline(props) {
-  const { title, url, author, time, numberOfComments, id } = props.article;
+  const { title, url, author, time, kids, id } = props.article;
   /**
    * 'time' is a Unix timestamp which is in seconds
    * JavaScript's Date() accepts Unix timestamp but expects milliseconds
@@ -31,7 +31,7 @@ export default function ArticleHeadline(props) {
             pathname: "/article",
             search: `?id=${id}`,
           }}>
-          {numberOfComments}
+          {kids ? kids.length : 0}
         </Link>{" "}
         comments
       </p>
