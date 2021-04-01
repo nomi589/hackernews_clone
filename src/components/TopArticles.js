@@ -1,5 +1,5 @@
 import React from "react";
-import getArticles from "../helpers/api";
+import getHeadlines from "../helpers/api";
 
 export default class TopArticles extends React.Component {
   state = {
@@ -8,9 +8,9 @@ export default class TopArticles extends React.Component {
   };
 
   componentDidMount() {
-    getArticles("top")
-      .then(() => {
-        this.setState({ articles: "success" });
+    getHeadlines("top")
+      .then((articles) => {
+        this.setState({ articles: JSON.stringify(articles, null, 2) });
       })
       .catch((error) => {
         this.setState({ error });
@@ -23,11 +23,7 @@ export default class TopArticles extends React.Component {
     return (
       <React.Fragment>
         {articles === null && error === null && "loading..."}
-        {error && (
-          <p>
-            Error in fetching articles. Please check your internet connection
-          </p>
-        )}
+        {error && <p>{error.message}</p>}
         {articles && <p>{articles}</p>}
       </React.Fragment>
     );
