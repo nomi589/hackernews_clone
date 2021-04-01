@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import TopArticles from "./TopArticles";
 import NewArticles from "./NewArticles";
 import ThemeToggle from "./ThemeToggle";
+import User from "./User";
+import Article from "./Article";
 
 function Nav() {
   return (
@@ -54,6 +56,8 @@ export default class App extends React.Component {
         </header>
         <Route path="/" exact component={TopArticles} />
         <Route path="/new" component={NewArticles} />
+        <Route path="/user" component={User} />
+        <Route path="/article" component={Article} />
       </Router>
     );
   }

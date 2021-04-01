@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export default function ArticleHeadline(props) {
   const { title, url, author, time, numberOfComments, id } = props.article;
@@ -16,7 +17,23 @@ export default function ArticleHeadline(props) {
         <a href={url}>{title}</a>
       </p>
       <p>
-        by {author} on {dateTime} with {numberOfComments} comments
+        by{" "}
+        <Link
+          to={{
+            pathname: "/user",
+            search: `?id=${author}`,
+          }}>
+          {author}
+        </Link>{" "}
+        on {dateTime} with{" "}
+        <Link
+          to={{
+            pathname: "/article",
+            search: `?id=${id}`,
+          }}>
+          {numberOfComments}
+        </Link>{" "}
+        comments
       </p>
     </article>
   );
