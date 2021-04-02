@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 export default function ArticleHeadline(props) {
-  const { title, url, author, time, kids, id } = props.article;
+  const { title, url, by, time, kids, id } = props.article;
   /**
    * 'time' is a Unix timestamp which is in seconds
    * JavaScript's Date() accepts Unix timestamp but expects milliseconds
@@ -21,9 +21,9 @@ export default function ArticleHeadline(props) {
         <Link
           to={{
             pathname: "/user",
-            search: `?id=${author}`,
+            search: `?id=${by}`,
           }}>
-          {author}
+          {by}
         </Link>{" "}
         on {dateTime} with{" "}
         <Link
