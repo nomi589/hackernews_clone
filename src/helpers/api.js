@@ -8,7 +8,7 @@ export function getHeadlines(type = "top", itemCount = 10) {
         return {
           title: item.title,
           url: item.url,
-          author: item.by,
+          by: item.by,
           time: item.time,
           kids: item.kids,
           id: item.id,
