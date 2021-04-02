@@ -35,7 +35,11 @@ export default class Article extends React.Component {
 
         return item.kids;
       })
-      .then((comments) => console.log(comments));
+      .then((commentsIds) => {
+        getItems(commentsIds).then((comments) =>
+          this.setState({ comments, loadingComments: false })
+        );
+      });
   }
 
   render() {
