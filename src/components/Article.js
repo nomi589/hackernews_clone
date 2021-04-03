@@ -1,7 +1,25 @@
 import React from "react";
+import PropTypes from "prop-types";
 import queryString from "query-string";
 import { getItems } from "../helpers/api";
 import ArticleHeadline from "./ArticleHeadline";
+
+function Comment(props) {
+  const { by, time, text } = props.comment;
+
+  return (
+    <article className="comment">
+      <p className="metadata">
+        by {by} on {time}
+      </p>
+      <p className="comment-text" dangerouslySetInnerHTML={{ __html: text }} />
+    </article>
+  );
+}
+
+Comment.propTypes = {
+  comment: PropTypes.object.isRequired,
+};
 
 export default class Article extends React.Component {
   constructor(props) {
@@ -51,7 +69,10 @@ export default class Article extends React.Component {
         {loadingItem && <p>loading...</p>}
         {item && <ArticleHeadline article={item} />}
         {loadingComments && <p>loading comments...</p>}
-        {comments && <p>success comments</p>}
+        {comments &&
+          comments.map((comment) => {
+            return <Comment key={comment.id} comment={comment} />;
+          })}
       </React.Fragment>
     );
   }
