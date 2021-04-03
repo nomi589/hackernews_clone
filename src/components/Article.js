@@ -1,6 +1,7 @@
 import React from "react";
 import queryString from "query-string";
 import { getItems } from "../helpers/api";
+import ArticleHeadline from "./ArticleHeadline";
 
 export default class Article extends React.Component {
   constructor(props) {
@@ -48,7 +49,7 @@ export default class Article extends React.Component {
     return (
       <React.Fragment>
         {loadingItem && <p>loading...</p>}
-        {item && <p>success</p>}
+        {item && <ArticleHeadline article={item} />}
         {loadingComments && <p>loading comments...</p>}
         {comments && <p>success comments</p>}
       </React.Fragment>
